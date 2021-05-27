@@ -1,2 +1,13 @@
 # tp01-engenharia-software
-Projeto para a disciplina Engenharia de Software do departamento de Ciência da Computação da UFMG.
+
+## Grupo
+Amanda Guimarães Caixeta Silva··
+Geovanna Menegasse Silva··
+Leandro Diniz Silva··
+Matheus Alexandre Irias de Oliveira··
+
+## Tema
+
+## Descrição do sistema
+
+## Tecnologias
