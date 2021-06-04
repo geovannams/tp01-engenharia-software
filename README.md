@@ -29,24 +29,25 @@ Sistema para aplicação de provas online e gerenciamento de notas
 * Como aluno quero visualizar a correção da minha prova
 * Como professor quero visualizar as turmas
 
-## Tarefas                                    Membro
-* Formulário de cadastro de usuário           Matheus Irias
-* Cadastro de usuário                         Matheus Irias
-* Tabela de usuário no banco de dados         Matheus Irias
-* Formulário de login                         Amanda Guimarães
-* Login                                       Amanda Guimarães
-* Tabela de turma no banco de dados           Leandro Diniz 
-* Cadastrar uma turma                         Leandro Diniz
-* Cadastrar uma turma                         Leandro Diniz
-* Vincular alunos na turma                    Leandro Diniz
-* Vincular alunos na turma                    Leandro Diniz
-* Tabelas de provas no banco de dados         Geovanna Menegasse
-* Criar prova                                 Geovanna Menegasse
-* Criar prova                                 Geovanna Menegasse
-* Tabela de respostas das provas              Geovanna Menegasse
-* Responder prova                             Geovanna Menegasse
-* Correçao automática da prova                Amanda Guimarães
-* Visualizar a prova corrigida                Matheus Irias
-* Visualizar a prova corrigida                Matheus Irias
-* Visualizar participantes de uma turma       Leandro Diniz
-* Visualizar participantes de uma turma       Leandro Diniz
+|## Tarefas                                    |## Membro|
+|----------------------------------------------|---------|
+|* Formulário de cadastro de usuário           |Matheus Irias|
+|* Cadastro de usuário                         |Matheus Irias|
+|* Tabela de usuário no banco de dados         |Matheus Irias|
+|* Formulário de login                         |Amanda Guimarães|
+|* Login                                       |Amanda Guimarães|
+|* Tabela de turma no banco de dados           |Leandro Diniz |
+|* Cadastrar uma turma                         |Leandro Diniz|
+|* Cadastrar uma turma                         |Leandro Diniz|
+|* Vincular alunos na turma                    |Leandro Diniz|
+|* Vincular alunos na turma                    |Leandro Diniz|
+|* Tabelas de provas no banco de dados         |Geovanna Menegasse|
+|* Criar prova                                 |Geovanna Menegasse|
+|* Criar prova                                 |Geovanna Menegasse|
+|* Tabela de respostas das provas              |Geovanna Menegasse|
+|* Responder prova                             |Geovanna Menegasse|
+|* Correçao automática da prova                |Amanda Guimarães|
+|* Visualizar a prova corrigida                |Matheus Irias|
+|* Visualizar a prova corrigida                |Matheus Irias|
+|* Visualizar participantes de uma turma       |Leandro Diniz|
+|* Visualizar participantes de uma turma       |Leandro Diniz|
