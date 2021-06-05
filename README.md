@@ -13,6 +13,7 @@ Sistema para aplicação de provas online e gerenciamento de notas
 * HTML, CSS  
 * Flask  
 * SQLAlchemy
+* MariaDB
 
 ## Grupo
 * Amanda Guimarães Caixeta Silva (Full-Stack)  
