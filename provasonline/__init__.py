@@ -1,6 +1,6 @@
 import os
 from functools import wraps
-from flask import Flask, render_template, Blueprint, request, redirect, url_for, flash, current_app
+from flask import Flask, redirect, url_for, flash, current_app
 from flask_login import LoginManager, current_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'AGKDGYdsfdfsI874RY9823gsdgdfgYR08Y20sdfwe93287RrewgN2NYORN3827'
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] =  'sqlite:///' + os.path.join(basedir,'storage.db')
+# app.config['SQLALCHEMY_DATABASE_URI'] =  'sqlite:///' + os.path.join(basedir,'storage.db')
 # app.config['SQLALCHEMY_DATABASE_URI'] =  'mysql://root:admin@localhost/provasonline'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -24,6 +24,7 @@ Migrate(app,db, compare_type = True)
 #################################################################
 ################# VARIÁVEIS/FUNÇÕES DO TEMPLATE #################
 #################################################################
+
 from provasonline.constants import usuario_urole_roles
 @app.context_processor
 def insere_usuario_urole_roles():
@@ -60,18 +61,21 @@ from provasonline.usuario.models.Usuario import Usuario
 from provasonline.aluno.models.Aluno import Aluno
 from provasonline.professor.models.Professor import Professor
 from provasonline.prova.models.Prova import Prova
+from provasonline.turma.models.Turma import Turma
 
 #################################################################
 ########################## BLUEPRINTS ###########################
 #################################################################
 
-from provasonline.usuario.routes import usuario
-from provasonline.aluno.routes import aluno
-from provasonline.professor.routes import professor
-from provasonline.prova.routes import prova
+from provasonline.usuario.controller import usuario
+from provasonline.aluno.controller import aluno
+from provasonline.professor.controller import professor
+from provasonline.prova.controller import prova
+from provasonline.turma.controller import turma
 
 app.register_blueprint(usuario, url_prefix='/')
 app.register_blueprint(aluno, url_prefix='/aluno')
 app.register_blueprint(professor, url_prefix='/professor')
 app.register_blueprint(prova, url_prefix='/prova')
+app.register_blueprint(prova, url_prefix='/turma')
 
