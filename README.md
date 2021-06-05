@@ -15,10 +15,10 @@ Sistema para aplicação de provas online e gerenciamento de notas
 * SQLAlchemy
 
 ## Grupo
-* Amanda Guimarães Caixeta Silva  
-* Geovanna Menegasse Silva  
-* Leandro Diniz Silva  
-* Matheus Alexandre Irias de Oliveira
+* Amanda Guimarães Caixeta Silva (Full-Stack)  
+* Geovanna Menegasse Silva (Full-Stack)  
+* Leandro Diniz Silva (Full-Stack)  
+* Matheus Alexandre Irias de Oliveira (Full-Stack)
 
 ## Backlog de Sprint
 * Como usuário quero me cadastrar no sistema
@@ -27,29 +27,30 @@ Sistema para aplicação de provas online e gerenciamento de notas
 * Como professor quero cadastrar uma prova
 * Como aluno quero resolver uma prova
 * Como aluno quero visualizar a correção da minha prova
-* Como professor quero visualizar as turmas
+* Como professor quero visualizar as turmas e as notas dos alunos
 
 ## Tarefas
 
-|Tarefas                                      |Membro|
-|-------------------------------------------- |---------|
-| Formulário de cadastro de usuário           |Matheus Irias|
-| Cadastro de usuário                         |Matheus Irias|
-| Tabela de usuário no banco de dados         |Matheus Irias|
-| Formulário de login                         |Amanda Guimarães|
-| Login                                       |Amanda Guimarães|
-| Tabela de turma no banco de dados           |Leandro Diniz |
-| Cadastrar uma turma                         |Leandro Diniz|
-| Cadastrar uma turma                         |Leandro Diniz|
-| Vincular alunos na turma                    |Leandro Diniz|
-| Vincular alunos na turma                    |Leandro Diniz|
-| Tabelas de provas no banco de dados         |Geovanna Menegasse|
-| Criar prova                                 |Geovanna Menegasse|
-| Criar prova                                 |Geovanna Menegasse|
-| Tabela de respostas das provas              |Geovanna Menegasse|
-| Responder prova                             |Geovanna Menegasse|
-| Correçao automática da prova                |Amanda Guimarães|
-| Visualizar a prova corrigida                |Matheus Irias|
-| Visualizar a prova corrigida                |Matheus Irias|
-| Visualizar participantes de uma turma       |Leandro Diniz|
-| Visualizar participantes de uma turma       |Leandro Diniz|
+|Tarefas                                           |Membro|
+|------------------------------------------------- |---------|
+| Formulário de cadastro de usuário      (front)   |Matheus Irias|
+| Cadastro de usuário                     (back)   |Matheus Irias|
+| Tabela de usuário no banco de dados     (back)   |Matheus Irias|
+| Formulário de login                    (front)   |Amanda Guimarães|
+| Login                                   (back)   |Amanda Guimarães|
+| Tabela de turma no banco de dados       (back)   |Leandro Diniz |
+| Cadastrar uma turma                    (front)   |Leandro Diniz|
+| Cadastrar uma turma                     (back)   |Leandro Diniz|
+| Vincular alunos na turma               (front)   |Leandro Diniz|
+| Vincular alunos na turma                (back)   |Leandro Diniz|
+| Tabelas de provas no banco de dados     (back)   |Geovanna Menegasse|
+| Criar prova                            (front)   |Geovanna Menegasse|
+| Criar prova                             (back)   |Geovanna Menegasse|
+| Tabela de respostas das provas          (back)   |Geovanna Menegasse|
+| Responder prova                        (front)   |Geovanna Menegasse|
+| Responder prova                         (back)   |Geovanna Menegasse|
+| Correçao automática da prova            (back)   |Amanda Guimarães|
+| Visualizar a prova corrigida           (front)   |Matheus Irias|
+| Visualizar a prova corrigida            (back)   |Matheus Irias|
+| Visualizar participantes de uma turma  (front)   |Leandro Diniz|
+| Visualizar participantes de uma turma   (back)   |Leandro Diniz|
