@@ -4,18 +4,13 @@ from flask import Flask, redirect, url_for, flash, current_app
 from flask_login import LoginManager, current_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from os.path import exists
 
 login_manager = LoginManager()
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'AGKDGYdsfdfsI874RY9823gsdgdfgYR08Y20sdfwe93287RrewgN2NYORN3827'
-
-basedir = os.path.abspath(os.path.dirname(__file__))
-# app.config['SQLALCHEMY_DATABASE_URI'] =  'sqlite:///' + os.path.join(basedir,'storage.db')
-# app.config['SQLALCHEMY_DATABASE_URI'] =  'mysql://root:admin@localhost/provasonline'
-
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://geovanna:BKc8QJen5wyxkh6p@34.222.122.201/provasonline'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
