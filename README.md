@@ -4,7 +4,7 @@
 Sistema para aplicação de provas online e gerenciamento de notas  
 
 ## Descrição  
-* Cada aluno e professor terão o seu próprio perfil de usuário  
+* Cada aluno e professor terá o seu próprio perfil de usuário  
 * Um professor pode agrupar alunos em turmas  
 * Um professor pode montar questionários/provas para suas turmas  
 * As provas serão corrigidas automaticamente
