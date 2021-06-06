@@ -15,19 +15,38 @@
 
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Opção 1</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" class="form-control" id="opcao1" name="opcao01" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            
+            <div class="input-group-text">
+                <input class="form-check-input mt-0" type="radio" value="" id="radio1" name="correta0">
+            </div>        
         </div>
+
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Opção 2</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" class="form-control" id="opcao2" name="opcao02" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            
+            <div class="input-group-text">
+                <input class="form-check-input mt-0" type="radio" value="" id="radio2" name="correta0">
+            </div> 
         </div>
+
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Opção 3</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" class="form-control" id="opcao3" name="opcao03" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            
+            <div class="input-group-text">
+                <input class="form-check-input mt-0" type="radio" value="" id="radio3" name="correta0">
+            </div> 
         </div>
+
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Opção 4</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" class="form-control" id="opcao4" name="opcao04" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            
+            <div class="input-group-text">
+                <input class="form-check-input mt-0" type="radio" value="" id="radio4" name="correta0">
+            </div> 
         </div>
 
         <div id="saida"></div>
@@ -50,19 +69,38 @@
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Opção 1</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input type="text" class="form-control" id="opcao1" name="opcao01" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        
+        <div class="input-group-text">
+            <input class="form-check-input mt-0" type="radio" value="" id="radio1" name="correta0">
+        </div>        
     </div>
+
     <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Opção 2</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input type="text" class="form-control" id="opcao2" name="opcao02" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        
+        <div class="input-group-text">
+            <input class="form-check-input mt-0" type="radio" value="" id="radio2" name="correta0">
+        </div> 
     </div>
+
     <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Opção 3</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input type="text" class="form-control" id="opcao3" name="opcao03" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        
+        <div class="input-group-text">
+            <input class="form-check-input mt-0" type="radio" value="" id="radio3" name="correta0">
+        </div> 
     </div>
+
     <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Opção 4</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input type="text" class="form-control" id="opcao4" name="opcao04" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        
+        <div class="input-group-text">
+            <input class="form-check-input mt-0" type="radio" value="" id="radio4" name="correta0">
+        </div> 
     </div>
 </template>
 
@@ -76,7 +114,17 @@
         
         const label = clone.querySelector("label");
         label.textContent = "Pergunta " + (cont+1) + ": ";
-        clone.querySelector("input").name = "pergunta" + cont;
+        clone.querySelector("#pergunta").name = "pergunta" + cont;
+
+        clone.querySelector("#opcao1").name = "opcao" + cont + 1;
+        clone.querySelector("#opcao2").name = "opcao" + cont + 2;
+        clone.querySelector("#opcao3").name = "opcao" + cont + 3;
+        clone.querySelector("#opcao4").name = "opcao" + cont + 4;
+
+        clone.querySelector("#radio1").name = "correta" + cont;
+        clone.querySelector("#radio2").name = "correta" + cont;
+        clone.querySelector("#radio3").name = "correta" + cont;
+        clone.querySelector("#radio4").name = "correta" + cont;
         
         container.appendChild(clone);
         cont++;
