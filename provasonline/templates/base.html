@@ -12,9 +12,30 @@
     </head>
 
     <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{{url_for('usuario.index')}}">PROVAS ONLINE</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link {{ 'active' if active_page == 'home' else '' }}" href="{{url_for('usuario.index')}}">Home</a>
+                  <a class="nav-link {{ 'active' if active_page == 'alunos' else '' }}" href="{{url_for('aluno.listar_alunos')}}">Alunos</a>
+                  <a class="nav-link {{ 'active' if active_page == 'turmas' else '' }}" href="{{url_for('turma.listar_turmas')}}">Turmas</a>
+                  <a class="nav-link {{ 'active' if active_page == 'provas' else '' }}" href="{{url_for('prova.listar_provas')}}">Provas</a>
+                  <a class="nav-link" href="#">Logout</a>
+                </div>
+              </div>
+            </div>
+        </nav>
         
+        <br><br>
+
         {% block content %}
         {% endblock %}
+
+        <br><br> 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     </body> 

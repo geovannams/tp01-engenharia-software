@@ -1,7 +1,16 @@
 {% extends "base.html" %}
+{% set active_page = "provas" %}
+{% block title %}Provas{% endblock %}
 
 {% block content %}
 
-LISTAR PROVAS
+<div class="content">
+    PROVA 1 <br>
+    PROVA 2 <br>
+    ...     <br>
+
+    <br>
+    <a href="{{url_for('prova.cadastrar_prova')}}">CRIAR UMA PROVA</a>
+</div>
 
 {% endblock %}

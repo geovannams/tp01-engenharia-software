@@ -11,7 +11,7 @@ usuario = Blueprint('usuario', __name__, template_folder='templates')
 ######################################################################
 
 @usuario.route('/', methods=['GET','POST'])
-@login_required()
+# @login_required()
 def index():
     return render_template('inicio.html')         
    

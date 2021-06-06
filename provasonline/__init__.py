@@ -72,5 +72,5 @@ app.register_blueprint(usuario, url_prefix='/')
 app.register_blueprint(aluno, url_prefix='/aluno')
 app.register_blueprint(professor, url_prefix='/professor')
 app.register_blueprint(prova, url_prefix='/prova')
-app.register_blueprint(prova, url_prefix='/turma')
+app.register_blueprint(turma, url_prefix='/turma')
 
