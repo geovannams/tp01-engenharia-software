@@ -59,7 +59,7 @@ Sistema para aplicação de provas online e gerenciamento de turmas e notas
 | Vincular alunos na turma               (front)   |Leandro Diniz     |     3      |   Pendente   |
 | Vincular alunos na turma                (back)   |Leandro Diniz     |     3      |   Pendente   |
 | Formulário de cadastro de prova        (front)   |Geovanna Menegasse|     4      |   Concluído  |
-| Formulário de cadastro de prova         (back)   |Geovanna Menegasse|     4      |   Pendente   |
+| Formulário de cadastro de prova         (back)   |Geovanna Menegasse|     4      |   Concluído  |
 | Tabelas de provas no banco de dados     (back)   |Geovanna Menegasse|     4      |   Concluído  |
 | Formulário de responder prova          (front)   |Geovanna Menegasse|     5      |   Pendente   |
 | Formulário de responder prova           (back)   |Geovanna Menegasse|     5      |   Pendente   |
