@@ -21,7 +21,18 @@ Sistema para aplicação de provas online e gerenciamento de notas
 * Leandro Diniz Silva (Full-Stack)  
 * Matheus Alexandre Irias de Oliveira (Full-Stack)
 
-## Backlog de Sprint
+## Backlog do Produto
+* Como usuário quero me cadastrar no sistema
+* Como usuário quero logar no sistema
+* Como professor quero separar os alunos em turmas
+* Como professor quero cadastrar uma prova
+* Como aluno quero resolver uma prova
+* Como aluno quero visualizar a correção da minha prova
+* Como professor quero visualizar as turmas e as notas dos alunos
+* Como professor quero editar e excluir provas que criei anteriormente
+* Como professor quero editar e excluir turmas
+
+## Backlog da Sprint
 * Como usuário quero me cadastrar no sistema
 * Como usuário quero logar no sistema
 * Como professor quero separar os alunos em turmas
@@ -35,23 +46,23 @@ Sistema para aplicação de provas online e gerenciamento de notas
 |Tarefas                                           |Membro|
 |------------------------------------------------- |---------|
 | Formulário de cadastro de usuário      (front)   |Matheus Irias|
-| Cadastro de usuário                     (back)   |Matheus Irias|
+| Formulário de cadastro de usuário       (back)   |Matheus Irias|
 | Tabela de usuário no banco de dados     (back)   |Matheus Irias|
 | Formulário de login                    (front)   |Amanda Guimarães|
-| Login                                   (back)   |Amanda Guimarães|
-| Tabela de turma no banco de dados       (back)   |Leandro Diniz |
-| Cadastrar uma turma                    (front)   |Leandro Diniz|
-| Cadastrar uma turma                     (back)   |Leandro Diniz|
+| Formulário de login e logout            (back)   |Amanda Guimarães|
+| Formulário de cadastro de turma        (front)   |Leandro Diniz|
+| Formulário de cadastro de turma         (back)   |Leandro Diniz|
+| Tabela de turma no banco de dados       (back)   |Leandro Diniz|
 | Vincular alunos na turma               (front)   |Leandro Diniz|
 | Vincular alunos na turma                (back)   |Leandro Diniz|
+| Formulário de cadastro de prova        (front)   |Geovanna Menegasse|
+| Formulário de cadastro de prova         (back)   |Geovanna Menegasse|
 | Tabelas de provas no banco de dados     (back)   |Geovanna Menegasse|
-| Criar prova                            (front)   |Geovanna Menegasse|
-| Criar prova                             (back)   |Geovanna Menegasse|
+| Formulário de responder prova          (front)   |Geovanna Menegasse|
+| Formulário de responder prova           (back)   |Geovanna Menegasse|
 | Tabela de respostas das provas          (back)   |Geovanna Menegasse|
-| Responder prova                        (front)   |Geovanna Menegasse|
-| Responder prova                         (back)   |Geovanna Menegasse|
 | Correçao automática da prova            (back)   |Amanda Guimarães|
 | Visualizar a prova corrigida           (front)   |Matheus Irias|
 | Visualizar a prova corrigida            (back)   |Matheus Irias|
-| Visualizar participantes de uma turma  (front)   |Leandro Diniz|
-| Visualizar participantes de uma turma   (back)   |Leandro Diniz|
+| Visualizar turmas e seus participantes (front)   |Leandro Diniz|
+| Visualizar turmas e seus participantes  (back)   |Leandro Diniz|
