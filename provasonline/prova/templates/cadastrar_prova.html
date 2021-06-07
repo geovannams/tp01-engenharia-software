@@ -8,9 +8,28 @@
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
 
     <div class="container">
-        <div class="mb-3">
-            <label for="quantidade" class="form-label">Pergunta 1:</label>
-            <input type="text" class="form-control" id="pergunta" name="pergunta0">
+
+        <div class="row g-3 mb-5">
+            <div class="col-md-8">
+                <label for="prova" class="form-label">Descrição:</label>
+                <input type="text" class="form-control" id="prova" name="prova" required>
+            </div>
+            <div class="col-md-4">
+                <label for="data" class="form-label">Data:</label>
+                <input type="date" class="form-control" id="data" name="data" required>
+            </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+            <div class="col-md-10 ">
+                <label for="pergunta" class="form-label">Pergunta 1:</label>
+                <input type="text" class="form-control" id="pergunta" name="pergunta0">
+            </div>
+          
+            <div class="col-md-2">
+                <label for="valor" class="form-label">Valor:</label>
+                <input type="number" min="0" class="form-control" id="valor" name="valor0">
+            </div>     
         </div>
 
         <div class="input-group mb-3">
@@ -18,7 +37,7 @@
             <input type="text" class="form-control" id="opcao1" name="opcao01" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             
             <div class="input-group-text">
-                <input class="form-check-input mt-0" type="radio" value="" id="radio1" name="correta0">
+                <input class="form-check-input mt-0" type="radio" value="1" id="radio1" name="correta0">
             </div>        
         </div>
 
@@ -27,7 +46,7 @@
             <input type="text" class="form-control" id="opcao2" name="opcao02" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             
             <div class="input-group-text">
-                <input class="form-check-input mt-0" type="radio" value="" id="radio2" name="correta0">
+                <input class="form-check-input mt-0" type="radio" value="2" id="radio2" name="correta0">
             </div> 
         </div>
 
@@ -36,7 +55,7 @@
             <input type="text" class="form-control" id="opcao3" name="opcao03" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             
             <div class="input-group-text">
-                <input class="form-check-input mt-0" type="radio" value="" id="radio3" name="correta0">
+                <input class="form-check-input mt-0" type="radio" value="3" id="radio3" name="correta0">
             </div> 
         </div>
 
@@ -45,7 +64,7 @@
             <input type="text" class="form-control" id="opcao4" name="opcao04" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             
             <div class="input-group-text">
-                <input class="form-check-input mt-0" type="radio" value="" id="radio4" name="correta0">
+                <input class="form-check-input mt-0" type="radio" value="4" id="radio4" name="correta0">
             </div> 
         </div>
 
@@ -58,13 +77,21 @@
     </div>    
 
     <input type="hidden" id="numero_de_perguntas" name="numero_de_perguntas" value="1" />
+    <input type="hidden" id="valor_total" name="valor_total" value="1" />
 </form>
 
 <template id="templateLinha">
     <br>
-    <div class="mb-3">
-        <label for="pergunta" class="form-label">Pergunta</label>
-        <input type="text" class="form-control" id="pergunta">
+    <div class="row g-3 mb-3">
+        <div class="col-md-10 ">
+            <label for="pergunta" class="form-label">Pergunta</label>
+            <input type="text" class="form-control" id="pergunta">
+        </div>
+      
+        <div class="col-md-2">
+            <label for="valor" class="form-label">Valor:</label>
+            <input type="number" min="0" class="form-control" id="valor">
+        </div>     
     </div>
 
     <div class="input-group mb-3">
@@ -115,6 +142,7 @@
         const label = clone.querySelector("label");
         label.textContent = "Pergunta " + (cont+1) + ": ";
         clone.querySelector("#pergunta").name = "pergunta" + cont;
+        clone.querySelector("#valor").name = "valor" + cont;
 
         clone.querySelector("#opcao1").name = "opcao" + cont + 1;
         clone.querySelector("#opcao2").name = "opcao" + cont + 2;

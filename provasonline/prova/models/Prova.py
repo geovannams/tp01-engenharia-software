@@ -6,11 +6,12 @@ class Prova(db.Model):
     id          = db.Column(db.Integer, primary_key = True)
     descricao   = db.Column(db.Text, nullable = True)
     data        = db.Column(db.Date, nullable = False)
+    valor       = db.Column(db.Integer, nullable = True)
     
-    def __init__(self, data, descricao):
+    def __init__(self, data, descricao, valor):
         self.data      = data
         self.descricao = descricao
-
+        self.valor     = valor
 
 class Pergunta(db.Model):
 
@@ -18,10 +19,12 @@ class Pergunta(db.Model):
     id          = db.Column(db.Integer, primary_key = True)
     descricao   = db.Column(db.Text, nullable = False)
     prova       = db.Column(db.Integer, db.ForeignKey('prova.id', ondelete = 'CASCADE'), nullable = False)
+    valor       = db.Column(db.Integer, nullable = True)
     
-    def __init__(self, descricao, prova):
+    def __init__(self, descricao, prova, valor):
         self.descricao = descricao
         self.prova     = prova
+        self.valor     = valor
 
 class Opcao(db.Model):
 
