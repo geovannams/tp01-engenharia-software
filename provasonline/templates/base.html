@@ -32,6 +32,22 @@
         
         <br><br>
 
+        <div class="container">
+          <!-- Flashed Messages Start -->
+          {% with messages = get_flashed_messages() %} {% if messages %}
+          <div>
+            {% for message in messages %}
+            <p>
+              <b>{{ message }}</b>
+            </p>
+            {% endfor %}
+          </div>
+          <br />
+          <br>
+          {% endif %} {% endwith %}
+          <!-- Flashed Messages End -->                
+        </div>
+
         {% block content %}
         {% endblock %}
 

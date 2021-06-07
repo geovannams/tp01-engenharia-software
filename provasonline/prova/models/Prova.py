@@ -31,7 +31,7 @@ class Opcao(db.Model):
     __tablename__ = 'opcao'
     id          = db.Column(db.Integer, primary_key = True)
     descricao   = db.Column(db.Text, nullable = False)
-    correta     = db.Column(db.Boolean, nullable = False)
+    correta     = db.Column(db.Boolean, nullable = True)
     pergunta    = db.Column(db.Integer, db.ForeignKey('pergunta.id', ondelete = 'CASCADE'), nullable = False)
     
     def __init__(self, descricao, correta, pergunta):
