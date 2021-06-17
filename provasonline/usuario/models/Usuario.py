@@ -5,16 +5,16 @@ from flask_login import UserMixin
 
 @login_manager.user_loader
 def load_user(user_id):
-    return Usuario.query.get(user_id)
+    return Usuario.query.get(user_id) 
 
-class Usuario(): # (db.Model, UserMixin):
-    # bcrypt = Bcrypt()
+class Usuario(db.Model, UserMixin):
+    bcrypt = Bcrypt()
 
-    # __tablename__ = 'usuario'
-    # id = db.Column(db.Integer, primary_key=True)
-    # nome = db.Column(db.String(255), nullable=False)
-    # login = db.Column(db.String(255), unique=True)
-    # senha = db.Column(db.String(255), nullable = False)
+    __tablename__ = 'usuario'
+    id = db.Column(db.Integer, primary_key=True)
+    nome = db.Column(db.String(255), nullable=False)
+    login = db.Column(db.String(255), unique=True)
+    senha = db.Column(db.String(255), nullable = False)
     # urole = db.Column(db.String(50), server_default="user", nullable=False)
 
     # __mapper_args__ = {
@@ -26,13 +26,14 @@ class Usuario(): # (db.Model, UserMixin):
     #      )        
     # }
     
-    # def __init__(self, login, senha, nome):
-    #     self.nome = nome
-    #     self.login = login
-    #     self.senha = self.bcrypt.generate_password_hash(senha).decode('utf-8')
+    def __init__(self, login, senha, nome):
+        self.nome = nome
+        self.login = login
+        self.senha = self.bcrypt.generate_password_hash(senha).decode('utf-8')
     
     # def setSenha(self, senha):
     #     self.senha = self.bcrypt.generate_password_hash(senha).decode('utf-8')
     #     return self.senha
+
 
     pass

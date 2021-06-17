@@ -51,8 +51,8 @@ Sistema para aplicação de provas online e gerenciamento de turmas e notas
 | Formulário de cadastro de usuário      (front)   |Matheus Irias     |     1      |   Pendente   |
 | Formulário de cadastro de usuário       (back)   |Matheus Irias     |     1      |   Pendente   |
 | Tabela de usuário no banco de dados     (back)   |Matheus Irias     |     1      |   Pendente   |
-| Formulário de login                    (front)   |Amanda Guimarães  |     2      |   Pendente   |
-| Formulário de login e logout            (back)   |Amanda Guimarães  |     2      |   Pendente   |
+| Formulário de login                    (front)   |Amanda Guimarães  |     2      | Em Andamento |
+| Formulário de login e logout            (back)   |Amanda Guimarães  |     2      | Em Andamento |
 | Formulário de cadastro de turma        (front)   |Leandro Diniz     |     3      |   Pendente   |
 | Formulário de cadastro de turma         (back)   |Leandro Diniz     |     3      |   Pendente   |
 | Tabela de turma no banco de dados       (back)   |Leandro Diniz     |     3      |   Pendente   |

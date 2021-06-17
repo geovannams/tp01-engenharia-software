@@ -24,6 +24,7 @@
                   <a class="nav-link {{ 'active' if active_page == 'alunos' else '' }}" href="{{url_for('aluno.listar_alunos')}}">Alunos</a>
                   <a class="nav-link {{ 'active' if active_page == 'turmas' else '' }}" href="{{url_for('turma.listar_turmas')}}">Turmas</a>
                   <a class="nav-link {{ 'active' if active_page == 'provas' else '' }}" href="{{url_for('prova.listar_provas')}}">Provas</a>
+                  <a class="nav-link" href="{{url_for('usuario.login')}}">Login</a>
                   <a class="nav-link" href="#">Logout</a>
                 </div>
               </div>
