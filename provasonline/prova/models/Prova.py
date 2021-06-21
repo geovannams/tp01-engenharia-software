@@ -7,6 +7,7 @@ class Prova(db.Model):
     descricao   = db.Column(db.Text, nullable = True)
     data        = db.Column(db.Date, nullable = False)
     valor       = db.Column(db.Integer, nullable = True)
+    # professor   = 
     
     def __init__(self, data, descricao, valor):
         self.data      = data

@@ -71,5 +71,13 @@ def cadastrar_prova():
     return render_template("cadastrar_prova.html")
 
 @prova.route("/listar_provas", methods=["GET","POST"])
+# @login_required(role=[usuario_urole_roles['PROFESSOR']])
 def listar_provas():
-    return render_template("listar_provas.html")
+    provas = Prova.query.all()
+    return render_template("listar_provas.html", provas = provas)
+
+@prova.route("/responder_prova/<_id>", methods=["GET","POST"])
+# @login_required(role=[usuario_urole_roles['PROFESSOR']])
+def responder_prova(_id):
+    prova = Prova.query.get_or_404(_id)
+    return render_template("responder_prova.html", prova = prova)

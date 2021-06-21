@@ -4,13 +4,23 @@
 
 {% block content %}
 
-<div class="content">
-    PROVA 1 <br>
-    PROVA 2 <br>
-    ...     <br>
+<div class="container">
+    <div class="d-flex justify-content-end mb-2">
+        <a href="{{url_for('prova.cadastrar_prova')}}" type="button" class="btn btn-primary" role="button">Nova Prova</a>
+    </div>
+    
 
-    <br>
-    <a href="{{url_for('prova.cadastrar_prova')}}">CRIAR UMA PROVA</a>
+    {% for prova in provas %} 
+    <a href="{{url_for('prova.responder_prova', _id = prova.id)}}" type="button" class="btn btn-outline-secondary col-md-12 mb-2" role="button">
+        <div class="d-flex justify-content-start">
+            {{ prova.descricao }} 
+        </div>
+        <div class="d-flex justify-content-end">
+            {{ prova.data }}
+        </div>
+    </a>
+    {% endfor %}
+
 </div>
 
 {% endblock %}
