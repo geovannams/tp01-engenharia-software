@@ -4,7 +4,7 @@ from flask import render_template, request, redirect, url_for, flash
 from provasonline import login_required
 from flask_login import LoginManager, current_user, login_user, logout_user
 from flask import Blueprint
-from provasonline.usuario.models.Forms import LoginForm
+from provasonline.usuario.models.Forms import LoginForm, UsuarioForm
 from flask_bcrypt import Bcrypt
 from provasonline import db
 
@@ -50,3 +50,20 @@ def login():
 @login_required()
 def logout():
     return redirect(url_for('usuario.login'))
+
+@usuario.route('/cadastrar_usuario', methods=['GET','POST'])
+#@login_required()
+def cadastrar_usuario():
+    form = UsuarioForm()
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            entidade_usuario = Usuario(nome = form.nome.data, login = form.login.data, senha = form.senha.data)
+            db.session.add(entidade_usuario)
+            db.session.commit()
+            flash("Usuário cadastrado com sucesso!")
+        else:
+            return redirect(url_for('usuario.cadastrar_usuario'))
+
+        return redirect(url_for('usuario.index'))
+
+    return render_template('cadastrar_usuario.html', form=form)

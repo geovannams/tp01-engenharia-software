@@ -2,6 +2,33 @@
 
 {% block content %}
 
-cadastrar usuario
+<form action="" method="POST">
+	{{ form.csrf_token }}
+	<div class="form-group">
+		{{form.nome.label}}
+		{{form.nome}}
+	</div>
+	{% for e in form.errors.nome %}
+	<div class="alert alert-danger">{{ e }}</div>
+	{% endfor %}
+
+	<div class="form-group">
+		{{form.login.label}}
+		{{form.login}}
+	</div>
+	{% for e in form.errors.login %}
+	<div class="alert alert-danger">{{ e }}</div>
+	{% endfor %}
+
+	<div class="form-group">
+		{{form.senha.label}}
+		{{form.senha}}
+	</div>
+	{% for e in form.errors.senha %}
+	<div class="alert alert-danger">{{ e }}</div>
+	{% endfor %}
+
+	{{form.submit(class_='btn btn-primary')}}
+</form>
 
 {% endblock %}
