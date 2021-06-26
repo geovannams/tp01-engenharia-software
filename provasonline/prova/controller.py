@@ -1,5 +1,5 @@
 from provasonline import db, login_required
-from provasonline.prova.models.Prova import Opcao, Pergunta, Prova
+from provasonline.prova.models.Prova import Opcao, Pergunta, Prova, Resposta
 from provasonline.constants import usuario_urole_roles
 from flask import Blueprint
 from flask import render_template, redirect, url_for, flash, request
@@ -71,13 +71,38 @@ def cadastrar_prova():
     return render_template("cadastrar_prova.html")
 
 @prova.route("/listar_provas", methods=["GET","POST"])
-# @login_required(role=[usuario_urole_roles['PROFESSOR']])
+# @login_required()
 def listar_provas():
     provas = Prova.query.all()
     return render_template("listar_provas.html", provas = provas)
 
 @prova.route("/responder_prova/<_id>", methods=["GET","POST"])
-# @login_required(role=[usuario_urole_roles['PROFESSOR']])
+# @login_required()
 def responder_prova(_id):
-    prova = Prova.query.get_or_404(_id)
+    prova = Prova.query.get_or_404(_id) 
+
+    if request.method == 'POST':
+        for p in prova.perguntas: 
+            opcao = request.form['op'+str(p.id)]
+            
+            aux = Opcao.query.get_or_404(opcao)
+
+            if (aux.correta == 1):                
+                resposta = Resposta(_id, p.id, opcao, 1)
+            else:
+                resposta = Resposta(_id, p.id, opcao, 0)
+
+            db.session.add(resposta)    
+        db.session.commit()    
+
+        flash("Prova respondida com sucesso!")
+        return redirect(url_for('prova.prova_respondida', _id = _id))  
+
     return render_template("responder_prova.html", prova = prova)
+
+@prova.route("/prova_respondida/<_id>", methods=["GET","POST"])
+# @login_required()
+def prova_respondida(_id):
+    prova = Prova.query.get_or_404(_id)
+    respostas = Resposta.query.filter(Resposta.prova == _id).all()
+    return render_template("prova_respondida.html", prova = prova, respostas = respostas)
