@@ -15,25 +15,23 @@ class Usuario(db.Model, UserMixin):
     nome = db.Column(db.String(255), nullable=False)
     login = db.Column(db.String(255), unique=True)
     senha = db.Column(db.String(255), nullable = False)
-    # urole = db.Column(db.String(50), server_default="user", nullable=False)
+    urole = db.Column(db.String(50), server_default="user", nullable=False)
 
-    # __mapper_args__ = {
-    #     "polymorphic_on":case(
-    #         [
-    #             (urole == "professor", "professor"),
-    #             (urole == "aluno", "aluno"),
-    #         ]
-    #      )        
-    # }
+    __mapper_args__ = {
+        "polymorphic_on":case(
+            [
+                (urole == "professor", "professor"),
+                (urole == "aluno", "aluno"),
+            ]
+         )        
+    }
     
-    def __init__(self, login, senha, nome):
+    def __init__(self, login, senha, nome, urole):
         self.nome = nome
         self.login = login
         self.senha = self.bcrypt.generate_password_hash(senha).decode('utf-8')
+        self.urole = urole
     
-    # def setSenha(self, senha):
-    #     self.senha = self.bcrypt.generate_password_hash(senha).decode('utf-8')
-    #     return self.senha
-
-
-    pass
+    def setSenha(self, senha):
+        self.senha = self.bcrypt.generate_password_hash(senha).decode('utf-8')
+        return self.senha

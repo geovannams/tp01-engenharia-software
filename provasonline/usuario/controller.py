@@ -1,5 +1,7 @@
 import os
 from provasonline.usuario.models.Usuario import Usuario, load_user
+from provasonline.professor.models.Professor import Professor
+from provasonline.aluno.models.Aluno import Aluno
 from flask import render_template, request, redirect, url_for, flash
 from provasonline import login_required
 from flask_login import LoginManager, current_user, login_user, logout_user
@@ -15,7 +17,7 @@ usuario = Blueprint('usuario', __name__, template_folder='templates')
 ######################################################################
 
 @usuario.route('/', methods=['GET','POST'])
-# @login_required()
+@login_required()
 def index():
     return render_template('inicio.html')         
    
@@ -57,8 +59,14 @@ def cadastrar_usuario():
     form = UsuarioForm()
     if request.method == 'POST':
         if form.validate_on_submit():
-            entidade_usuario = Usuario(nome = form.nome.data, login = form.login.data, senha = form.senha.data)
-            db.session.add(entidade_usuario)
+
+            if(request.form["urole"] == 'professor'):
+                entidade_usuario = Professor(nome = form.nome.data, login = form.login.data, senha = form.senha.data, urole = request.form["urole"])
+                db.session.add(entidade_usuario)
+            else:
+                entidade_usuario = Aluno(nome = form.nome.data, login = form.login.data, senha = form.senha.data, urole = request.form["urole"])
+                db.session.add(entidade_usuario)  
+
             db.session.commit()
             flash("Usuário cadastrado com sucesso!")
         else:

@@ -16,7 +16,8 @@ def cadastrar_prova():
 
         descricao = request.form['prova']
         data      = datetime.strptime(request.form['data'], '%Y-%m-%d').date()
-        prova     = Prova(data, descricao, 0)
+        #TODO: professor como current_user (preciso do login pronto)
+        prova     = Prova(data, descricao, 0, 9)
         db.session.add(prova)
         db.session.commit()
 
@@ -73,6 +74,9 @@ def cadastrar_prova():
 @prova.route("/listar_provas", methods=["GET","POST"])
 # @login_required()
 def listar_provas():
+    #TODO: listar provas do current_user
+    #TODO: separar tipo de listagem de aluno e professor
+
     provas = Prova.query.all()
     return render_template("listar_provas.html", provas = provas)
 
@@ -81,6 +85,10 @@ def listar_provas():
 def responder_prova(_id):
     prova = Prova.query.get_or_404(_id) 
 
+    #TODO: se ja tiver essa prova respondida pra esse aluno, bloqueia
+    #TODO: aluno como current_user (preciso do login pronto)
+    #TODO: remover a permissão do botão para o professor
+
     if request.method == 'POST':
         for p in prova.perguntas: 
             opcao = request.form['op'+str(p.id)]
@@ -88,9 +96,9 @@ def responder_prova(_id):
             aux = Opcao.query.get_or_404(opcao)
 
             if (aux.correta == 1):                
-                resposta = Resposta(_id, p.id, opcao, 1)
+                resposta = Resposta(_id, p.id, opcao, 1, 8)
             else:
-                resposta = Resposta(_id, p.id, opcao, 0)
+                resposta = Resposta(_id, p.id, opcao, 0, 8)
 
             db.session.add(resposta)    
         db.session.commit()    

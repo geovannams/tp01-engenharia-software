@@ -7,14 +7,15 @@ class Prova(db.Model):
     descricao   = db.Column(db.Text, nullable = True)
     data        = db.Column(db.Date, nullable = False)
     valor       = db.Column(db.Integer, nullable = True)
-    # professor   = 
+    professor   = db.Column(db.Integer, db.ForeignKey('professor.id', ondelete = 'CASCADE'), nullable = True)
 
     perguntas = db.relationship("Pergunta", backref='perguntas', lazy='dynamic')
     
-    def __init__(self, data, descricao, valor):
+    def __init__(self, data, descricao, valor, professor):
         self.data      = data
         self.descricao = descricao
         self.valor     = valor
+        self.professor = professor
 
 class Pergunta(db.Model):
 
@@ -52,15 +53,15 @@ class Resposta(db.Model):
     pergunta   = db.Column(db.Integer, db.ForeignKey('pergunta.id', ondelete = 'CASCADE'), nullable = False)
     opcao      = db.Column(db.Integer, db.ForeignKey('opcao.id', ondelete = 'CASCADE'), nullable = False)
     acertou    = db.Column(db.Boolean, nullable = True)
-    #aluno      = db.Column(db.Integer, db.ForeignKey('aluno.id', ondelete = 'CASCADE'), nullable = False)
+    aluno      = db.Column(db.Integer, db.ForeignKey('aluno.id', ondelete = 'CASCADE'), nullable = True)
 
     pergunta_obj = db.relationship('Pergunta', foreign_keys=pergunta)
     prova_obj    = db.relationship('Prova', foreign_keys=prova)
     opcao_obj    = db.relationship('Opcao', foreign_keys=opcao)
     
-    def __init__(self, prova, pergunta, opcao, acertou):
+    def __init__(self, prova, pergunta, opcao, acertou, aluno):
         self.prova    = prova
         self.pergunta = pergunta
         self.opcao    = opcao
         self.acertou  = acertou
-        #self.aluno    = aluno
+        self.aluno    = aluno
